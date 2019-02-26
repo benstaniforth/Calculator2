@@ -11,12 +11,13 @@ public class Main {
         System.out.println("Please enter two random numbers");
 
         Scanner scanner1 = new Scanner(System.in);
+        System.out.print("Number 1 is: ");
         Integer userInput1 = scanner1.nextInt();
-        System.out.println("Number 1 is: " + userInput1);
+
 
         Scanner scanner2 = new Scanner(System.in);
+        System.out.print("Number 2 is: ");
         Integer userInput2 = scanner2.nextInt();
-        System.out.println("Number 2 is: " + userInput2);
 
 
         Calculate result;
