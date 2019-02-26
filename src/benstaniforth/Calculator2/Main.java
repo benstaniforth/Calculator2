@@ -21,6 +21,7 @@ public class Main {
 
         Calculate result;
 
+        label:
         while (true) {
 
             System.out.println("Insert a function to perform on the two numbers");
@@ -28,17 +29,19 @@ public class Main {
 
             String operation = promptUserForOperation();
 
-            if (operation.equals("+")) {
-                result = new Add();
-                break;
-            } else if (operation.equals("-")) {
-                result = new Subtract();
-                break;
-            } else if (operation.equals("*")) {
-                result = new Multiply();
-                break;
-            } else {
-                System.out.println("This is not a valid input");
+            switch (operation) {
+                case "+":
+                    result = new Add();
+                    break label;
+                case "-":
+                    result = new Subtract();
+                    break label;
+                case "*":
+                    result = new Multiply();
+                    break label;
+                default:
+                    System.out.println("This is not a valid input");
+                    break;
             }
         }
 
