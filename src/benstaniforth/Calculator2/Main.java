@@ -1,5 +1,7 @@
 package benstaniforth.Calculator2;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -8,16 +10,21 @@ public class Main {
 
 
         System.out.println("Welcome to the calculator");
-        System.out.println("Please enter two random numbers");
+        System.out.println("How many numbers would you like to use?");
 
         Scanner scanner1 = new Scanner(System.in);
-        System.out.print("Number 1 is: ");
-        Integer userInput1 = scanner1.nextInt();
+        Integer userQuantity = scanner1.nextInt();
 
+        int selection = 1;
 
-        Scanner scanner2 = new Scanner(System.in);
-        System.out.print("Number 2 is: ");
-        Integer userInput2 = scanner2.nextInt();
+        List <Integer> numbersChosen = new ArrayList<>();
+
+        for (int i = 0; i < userQuantity; i++){
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Number " + selection++ + " is ");
+            Integer n = scanner.nextInt();
+            numbersChosen.add(n);
+        }
 
 
         Calculate result;
@@ -25,7 +32,7 @@ public class Main {
         label:
         while (true) {
 
-            System.out.println("Insert a function to perform on the two numbers");
+            System.out.println("Insert a function to perform on the numbers");
             System.out.println("You can either add (+), subtract (-) or multiply (*) by entering the operation below");
 
             String operation = promptUserForOperation();
@@ -46,8 +53,10 @@ public class Main {
             }
         }
 
+        System.out.println(numbersChosen);
 
-        System.out.println("Result = " + result.calculate(userInput1, userInput2));
+
+        // System.out.println("Result = " + result.calculate(numbersChosen,result));
 
     }
 
